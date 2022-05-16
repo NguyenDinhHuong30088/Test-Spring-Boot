@@ -48,7 +48,7 @@ public class RouteApi {
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     public Route update(@PathVariable int id, @RequestBody Route updateProduct) {
         Route existing = routeService.findById(id).get();
-        existing.setName(updateProduct.getName());
+        existing.setNameRoute(updateProduct.getNameRoute());
         existing.setDescription(updateProduct.getDescription());
         existing.setDistrict(updateProduct.getDistrict());
         routeService.save(existing);
